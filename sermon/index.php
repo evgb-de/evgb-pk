@@ -2,11 +2,11 @@
 
 use Pagekit\Application;
 
-// packages/evgb-de/calendar/index.php
+// packages/evgb-de/sermon/index.php
 
 return [
 
-    'name' => 'calendar',
+    'name' => 'sermon',
 
     'type' => 'extension',
 
@@ -15,32 +15,31 @@ return [
     },
     // Enable the calendar: appreviation
     'resources' => [
-      'calendar' => ''
+      'sermon' => ''
     ],
 
     'config' => [
       'entries' => [
-        ['name' => 'GCal', 'property' => true],
-        ['name' => 'GCal', 'property' => false]
+        ['id' => '0', 'preacher' => 'prediger', 'text' => 'Matthäus 1,5', 'description' => 'beschreibung', 'status' => true, 'audio' => '/bla']
       ]
     ],
 
     'autoload' => [
-      'Pagekit\\Calendar\\' => 'src'
+      'Pagekit\\Sermon\\' => 'src'
     ],
 
     'routes' => [
-      '@calendar' => [
-        'path' => '/calendar',
-        'controller' => 'Pagekit\\Calendar\\Controller\\CalendarController'
+      '@sermon' => [
+        'path' => '/sermon',
+        'controller' => 'Pagekit\\Sermon\\Controller\\SermonController'
       ]
     ],
 
     'menu' => [
-      'calendar' => [
-        'label'  => 'Calendar',
+      'sermon' => [
+        'label'  => 'Predigten',
         'icon'   => 'app/system/assets/images/placeholder-icon.svg',
-        'url'    => '@calendar',
+        'url'    => '@sermon',
       ]
     ],
   ];

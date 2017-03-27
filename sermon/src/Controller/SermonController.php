@@ -1,25 +1,25 @@
 <?php
 
-namespace Pagekit\Calendar\Controller;
+namespace Pagekit\Sermon\Controller;
 
 use Pagekit\Application as App;
 
-class CalendarController
+class SermonController
 {
   /**
   * @Access(admin=true)
   */
   public function indexAction()
   {
-      $module = App::module('calendar');
+      $module = App::module('sermon');
       $config = $module->config;
       return [
           '$view' => [
-              'title' => 'Calendar management',
-              'name' => 'calendar:views/admin/index.php'
+              'title' => 'Sermons',
+              'name' => 'sermon:views/admin/index.php'
           ],
           '$data' => $config,
-          'title' => 'Configure your Calendar',
+          'title' => 'Manage Sermons',
           'entries' => $config['entries']
       ];
   }

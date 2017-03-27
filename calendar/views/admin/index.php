@@ -1,7 +1,11 @@
-<h1><?php echo $message; ?></h1>
+<?php $view->script('calendar', 'calendar:js/calendar.js', 'vue') ?>
 
-<ul>
-  <?php foreach ($entries as $entry): ?>
-    <li><?= $entry['name'] ?>: <?= $entry['property'] ?></li>
-  <?php endforeach; ?>
-</ul>
+
+
+<div id="calendar" >
+    <ul >
+            <li v-for="entry in entries" :class="{'uk-text-muted' : entry.property">
+                {{ entry.name }}
+            </li>
+    </ul>
+</div>
