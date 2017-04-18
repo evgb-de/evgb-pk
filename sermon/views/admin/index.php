@@ -13,7 +13,7 @@
       </div>
     </div>
     <div data-uk-margin>
-      <a class="uk-button uk-button-primary" :href="$url.route('admin/sermon/edit')">{{ 'Add User'  }}</a>
+      <a class="uk-button uk-button-primary" :href="$url.route('admin/sermon/edit')">{{ 'Add Sermon'  }}</a>
     </div>
   </div>
   <div class="uk-overflow-container">
@@ -21,7 +21,7 @@
       <thead>
         <tr>
           <th class="pk-table-width-minimum"><input type="checkbox" v-check-all:selected.literal="input[name=id]" number></th>
-          <th colspan="2" v-order:username="config.filter.order">Preacher</th>
+          <th colspan="2" v-order:username="config.filter.order">{{ 'Preacher' }}</th>
           <th class="pk-table-width-100 uk-text-center">
             {{ 'Description'  }}
           </th>
@@ -38,8 +38,8 @@
           <td><input type="checkbox" name="id" :value="entry.id"></td>
           <td class="pk-table-width-minimum">
             <a href="#" :class="{
-              'pk-icon-circle-success': entry.status,
-              'pk-icon-circle-danger': !entry.status
+              'pk-icon-circle-success': entry.public,
+              'pk-icon-circle-danger': !entry.public
             }" @click="toggleStatus(entry)"></a>
           </td>
           <td class="uk-text-nowrap">

@@ -20,7 +20,7 @@ class SermonController
           ],
           '$data' => $config,
           'title' => 'Manage Sermons',
-          'entries' => $config['entries']
+          // 'entries' => $config['entries']
       ];
   }
 }
