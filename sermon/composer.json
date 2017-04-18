@@ -1,6 +1,6 @@
 {
-    "name": "evgb-de/sermon",
-    "version": "0.1",
+    "name": "evgb-pk/sermon",
+    "version": "0.2",
     "type": "pagekit-extension",
-    "title": "Public Sermon sharing and filter"
+    "title": "Share your Sermons or other Files"
 }
