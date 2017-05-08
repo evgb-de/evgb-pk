@@ -1,11 +1,14 @@
-<h1>ToDo items</h1>
+<?php $view->script('sermon', 'sermon:js/user.js', 'vue') ?>
+<div id="sermon">
+  <h1>{{ 'Sermons' | trans }}:</h1>
 
-<ul>
-    <?php foreach($entries as $entry): ?>
+  <ul>
+      <?php foreach($entries as $entry): ?>
 
-    <?php if(!$entry['hidden']): ?>
-        <li><?= $entry['desription'] ?></li>
-    <?php endif ?>
+      <?php if(!$entry['hidden']): ?>
+          <li><?= $entry['preacher'] ?> | <?= $entry['description'] ?></li>
+      <?php endif ?>
 
-    <?php endforeach; ?>
-</ul>
+      <?php endforeach; ?>
+  </ul>
+</div>

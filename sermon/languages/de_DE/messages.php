@@ -3,6 +3,7 @@
   'Add' => 'Hinzufügen',
   'Sermon' => 'Predigt',
   'Sermons' => 'Predigten',
+  'Preacher' => 'Prediger',
   'Unhide' => 'Einblenden',
   'Hidden' => 'Ausgeblendet',
   'You can add your first Sermon using the input fields above. Go ahead!' => 'Du kannst die erste Predigt über die oberen Felder hinzufügen.',

@@ -1,4 +1,4 @@
-<?php $view->script('sermon', 'sermon:js/sermon.js', 'vue') ?>
+<?php $view->script('sermon', 'sermon:js/admin.js', 'vue') ?>
 
 <div id="sermon-table" class="uk-form">
   <button class="uk-button uk-button-primary uk-align-right" @click="save">{{ 'Save' | trans }}</button>

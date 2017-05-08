@@ -37,6 +37,8 @@ return [
       'label'  => 'Predigten',
       'icon'   => 'app/system/assets/images/placeholder-icon.svg',
       'url'    => '@sermon',
+      'active' => '@todo/*',
+      'access' => 'todo: manage'
     ]
   ],
 ];
