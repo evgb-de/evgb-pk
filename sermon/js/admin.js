@@ -7,14 +7,26 @@ $(function () {
             newPreacher: '',
             newBiblechapter: '',
             newDescription: '',
+            isPreacherDanger: false,
+            isBiblechapterDanger: false,
+            isDescriptionDanger: false,
         },
 
         methods: {
           add: function(e) {
             e.preventDefault();
-            if(!this.newPreacher) return;
-            if(!this.newDescription) return;
-            if(!this.newBiblechapter) return;
+            if(!this.newPreacher) {
+              this.isPreacherDanger = true;
+              return;
+            }
+            if(!this.newDescription) {
+              this.isDescriptionDanger = true;
+              return;
+            }
+            if(!this.newBiblechapter) {
+              this.isBiblechapterDanger = true;
+              return;
+            }
 
             this.entries.push({
               preacher: this.newPreacher,
@@ -27,6 +39,9 @@ $(function () {
             this.newPreacher = '';
             this.newBiblechapter = '';
             this.newDescription = '';
+            this.isPreacherDanger = false;
+            this.isDescriptionDanger = false;
+            this.isBiblechapterDanger = false;
           },
 
           edit: function(entry) {

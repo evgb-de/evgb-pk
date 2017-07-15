@@ -5,9 +5,9 @@
   <h2>{{ '{0} Sermons|one: One Sermon|more: %count% Sermons' | transChoice entries.length {count:entries.length} }}</h2>
 
   <form class="uk-width-large-1-1" @submit="add">
-    <input class="uk-input-large uk-width-1-5" placeholder="{{ 'Preacher' | trans }}" v-model="newPreacher">
-    <input class="uk-input-large uk-width-1-5" placeholder="{{ 'Biblechapter' | trans }}" v-model="newBiblechapter">
-    <input class="uk-input-large uk-width-1-5" placeholder="{{ 'Description' | trans }}" v-model="newDescription">
+    <input class="uk-input-large uk-width-1-5"  v-bind:class="{ 'uk-form-danger': isPreacherDanger }" placeholder="{{ 'Preacher' | trans }}" v-model="newPreacher">
+    <input class="uk-input-large uk-width-1-5"  v-bind:class="{ 'uk-form-danger': isBiblechapterDanger }" placeholder="{{ 'Biblechapter' | trans }}" v-model="newBiblechapter">
+    <input class="uk-input-large uk-width-1-5"  v-bind:class="{ 'uk-form-danger': isDescriptionDanger }" placeholder="{{ 'Description' | trans }}" v-model="newDescription">
     <button class="uk-button" @click="add">{{ 'Add' | trans }}</button>
   </form>
 
