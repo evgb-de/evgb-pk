@@ -5,9 +5,9 @@
     <table class="uk-table-striped uk-table-hover uk-width-1-1">
       <thead>
         <tr>
-          <th class="uk-width-1-2">{{ 'Preacher' | trans }}</th>
-          <th class="uk-width-1-2">{{ 'Biblechapter' | trans }}</th>
-          <th class="uk-width-1-2">{{ 'Description' | trans }}</th>
+          <th class="uk-width-1-3 uk-text-left">{{ 'Preacher' | trans }}</th>
+          <th class="uk-width-1-3 uk-text-left">{{ 'Biblechapter' | trans }}</th>
+          <th class="uk-width-1-3 uk-text-left">{{ 'Description' | trans }}</th>
         </tr>
       </thead>
       <tbody>
