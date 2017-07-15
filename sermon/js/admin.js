@@ -4,23 +4,37 @@ $(function () {
 
         data: {
             entries: window.$data.config.entries,
-            newDescription: ''
+            newPreacher: '',
+            newBiblechapter: '',
+            newDescription: '',
         },
 
         methods: {
           add: function(e) {
             e.preventDefault();
+            if(!this.newPreacher) return;
             if(!this.newDescription) return;
+            if(!this.newBiblechapter) return;
 
             this.entries.push({
               preacher: this.newPreacher,
+              biblechapter: this.newBiblechapter,
               description: this.newDescription,
-              hidden: false
+              hidden: false,
             });
 
             this.newAttachment = '';
             this.newPreacher = '';
+            this.newBiblechapter = '';
             this.newDescription = '';
+          },
+
+          edit: function(entry) {
+            this.newPreacher = entry.preacher;
+            this.newBiblechapter = entry.biblechapter;
+            this.newDescription = entry.description;
+
+            this.entries.$remove(entry);
           },
 
           toggle: function(entry) {
