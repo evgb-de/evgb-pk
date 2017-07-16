@@ -5,9 +5,10 @@
     <table class="uk-table-striped uk-table-hover uk-width-1-1">
       <thead>
         <tr>
-          <th class="uk-width-1-3 uk-text-left">{{ 'Preacher' | trans }}</th>
-          <th class="uk-width-1-3 uk-text-left">{{ 'Biblechapter' | trans }}</th>
-          <th class="uk-width-1-3 uk-text-left">{{ 'Description' | trans }}</th>
+          <th class="uk-width-1-4 uk-text-left">{{ 'Preacher' | trans }}</th>
+          <th class="uk-width-1-4 uk-text-left">{{ 'Bible passage' | trans }}</th>
+          <th class="uk-width-1-4 uk-text-left">{{ 'Description' | trans }}</th>
+          <th class="uk-width-1-4 uk-text-left">{{ 'Date' | trans }}</th>
         </tr>
       </thead>
       <tbody>
@@ -15,8 +16,9 @@
 <?php if(!$entry['hidden']): ?>
         <tr>
           <td><?= $entry['preacher'] ?></td>
-          <td><?= $entry['biblechapter'] ?></td>
+          <td><?= $entry['biblepassage'] ?></td>
           <td><?= $entry['description'] ?></td>
+          <td><?= $entry['date'] ?></td>
         </tr>
 <?php endif ?>
 <?php endforeach; ?>
