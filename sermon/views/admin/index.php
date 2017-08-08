@@ -20,11 +20,12 @@
     <table class="uk-table-striped uk-table-hover uk-width-1-1" v-if="entries.length">
       <thead>
         <tr>
-          <th class="uk-width-1-5">{{ 'Preacher' | trans }}</th>
-          <th class="uk-width-1-5">{{ 'Bible passage' | trans }}</th>
-          <th class="uk-width-1-5">{{ 'Description' | trans }}</th>
-          <th class="uk-width-1-5">{{ 'Date' | trans }}</th>
-          <th class="uk-width-1-5 uk-text-left">{{ 'Actions' | trans }}</th>
+          <th class="uk-width-1-8">{{ 'Preacher' | trans }}</th>
+          <th class="uk-width-1-8">{{ 'Bible passage' | trans }}</th>
+          <th class="uk-width-1-8">{{ 'Description' | trans }}</th>
+          <th class="uk-width-1-8">{{ 'Date' | trans }}</th>
+          <th class="uk-width-2-8">{{ 'Files' | trans }}</th>
+          <th class="uk-width-2-8 uk-text-left">{{ 'Actions' | trans }}</th>
         </tr>
       </thead>
       <tbody>
@@ -34,6 +35,14 @@
           <td class="uk-text-center">{{ entry.description }}</td>
           <td class="uk-text-center">{{ entry.date }}</td>
           <td class="uk-text-left">
+            <a v-for="link in entry.links" class="uk-button" href="{{ link.link }}">{{ link.description | trans }}</a>
+          </td>
+          <td class="uk-text-left">
+            <input class="uk-input-small" placeholder="{{ 'Description' | trans }}" v-model="newLinkDescription" v-if="entry.hiddenLink">
+            <input class="uk-input-small" placeholder="{{ 'Link' | trans }}" v-model="newLink" v-if="entry.hiddenLink">
+            <button @click="toggleLink(entry)" class="uk-button" v-if="!entry.hiddenLink"><i class="uk-icon-plus"></i></button>
+            <button @click="addLink(entry)" class="uk-button" v-if="entry.hiddenLink"><i class="uk-icon-check"></i></button>
+
             <button @click="toggle(entry)" class="uk-button">{{ entry.hidden ? "Unhide" : "Hide" | trans }}</button>
             <button @click="edit(entry)" class="uk-button"><i class="uk-icon-pencil"></i></button>
             <button @click="remove(entry)" class="uk-button uk-button-danger" v-if="entry.hidden"><i class="uk-icon-remove"></i></button>

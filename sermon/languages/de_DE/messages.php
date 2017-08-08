@@ -4,6 +4,7 @@
   'Remove' => 'Löschen',
   'Hide' => 'Ausblenden',
   'Date' => 'Datum',
+  'Files' => 'Dateien',
   'Actions' => 'Aktionen',
   'Sermons' => 'Predigten',
   'Preacher' => 'Prediger',

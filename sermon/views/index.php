@@ -5,10 +5,11 @@
     <table class="uk-table-striped uk-table-hover uk-width-1-1">
       <thead>
         <tr>
-          <th class="uk-width-1-4 uk-text-left">{{ 'Preacher' | trans }}</th>
-          <th class="uk-width-1-4 uk-text-left">{{ 'Bible passage' | trans }}</th>
-          <th class="uk-width-1-4 uk-text-left">{{ 'Description' | trans }}</th>
-          <th class="uk-width-1-4 uk-text-left">{{ 'Date' | trans }}</th>
+          <th class="uk-width-1-6 uk-text-left">{{ 'Preacher' | trans }}</th>
+          <th class="uk-width-1-6 uk-text-left">{{ 'Bible passage' | trans }}</th>
+          <th class="uk-width-1-6 uk-text-left">{{ 'Description' | trans }}</th>
+          <th class="uk-width-1-6 uk-text-left">{{ 'Date' | trans }}</th>
+          <th class="uk-width-2-6 uk-text-left">{{ 'Files' | trans }}</th>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +20,11 @@
           <td><?= $entry['biblepassage'] ?></td>
           <td><?= $entry['description'] ?></td>
           <td><?= $entry['date'] ?></td>
+          <td>
+            <?php foreach ($entry['links'] as $link): ?>
+              <a class="uk-button uk-button-small" href="<?= $link['link'] ?>"><?= $link['description'] ?></a>
+            <?php endforeach; ?>
+          </td>
         </tr>
 <?php endif ?>
 <?php endforeach; ?>
