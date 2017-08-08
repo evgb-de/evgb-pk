@@ -13,5 +13,5 @@
   'Description' => 'Bescheibung',
   'Bible passage' => 'Bibelstelle',
   '{0} Sermons|one: One Sermon|more: %count% Sermons' => '{0} Keine Predigten|one: Eine Predigt|more: %count% Predigten',
-  'You can add your first Sermon using the input fields above. Go ahead!' => 'Du kannst die erste Predigt über die oberen Felder hinzufügen.',
+  'You can add your first task using the input fields above. Go ahead!' => 'Du kannst die erste Predigt über die oberen Felder hinzufügen.',
 );

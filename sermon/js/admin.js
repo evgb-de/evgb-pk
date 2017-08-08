@@ -90,17 +90,6 @@ $(function () {
             link:         this.newLink,
           });
           entry.hiddenLink = false;
-
-          /*this.entries.push({
-            preacher:     entry.preacher,
-           biblepassage: entry.biblepassage,
-            description:  entry.description,
-            date:         entry.date,
-            links:        ll,
-            hidden:       entry.hidden,
-            hiddenLink:   false,
-          });
-           this.entries.$remove(entry);*/
           this.newLinkDescription = '';
           this.newLink = '';
         }
