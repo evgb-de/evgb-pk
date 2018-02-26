@@ -1,9 +1,9 @@
-<?php $view->script('sermon', 'sermon:js/admin.js', 'vue') ?>
+<?php $view->script('pk-ddl', 'pk-ddl:js/admin.js', 'vue') ?>
 <script type="text/javascript" src="/app/assets/uikit/js/components/datepicker.min.js"></script>
-<div id="sermon-table" class="uk-form">
+<div id="pk-ddl-table" class="uk-form">
   <button class="uk-button uk-button-primary uk-align-right" @click="save">{{ 'Save' | trans }}</button>
 
-  <h2>{{ '{0} Sermons|one: One Sermon|more: %count% Sermons' | transChoice entries.length {count:entries.length} }}</h2>
+  <h2>{{ '{0} DDLs|one: One DDL|more: %count% DDLs' | transChoice entries.length {count:entries.length} }}</h2>
 
   <form class="uk-width-large-1-1 uk-form" @submit="add">
     <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isPreacherDanger }" placeholder="{{ 'Preacher' | trans }}" v-model="newPreacher">

@@ -1,6 +1,6 @@
 {
-    "name": "evgb-pk/sermon",
+    "name": "pk-ddl",
     "version": "0.2",
     "type": "pagekit-extension",
-    "title": "Share your Sermons or other Files"
+    "title": "Provide a List of DDLs with custom Fields"
 }

@@ -2,27 +2,27 @@
 
 use Pagekit\Application;
 
-// packages/evgb-de/sermon/index.php
+// packages/evgb-de/pk-ddl/index.php
 
 return [
-  'name' => 'sermon',
+  'name' => 'pk-ddl',
   'type' => 'extension',
   // called when Pagekit initializes the module
   'main' => function (Application $app) {
 
   },
   'autoload' => [
-    'Pagekit\\Sermon\\' => 'src'
+    'Pagekit\\pk-ddl\\' => 'src'
   ],
-  // Enable the sermon: appreviation
+  // Enable the pk-ddl: appreviation
   'resources' => [
-    'sermon:' => ''
+    'pk-ddl:' => ''
   ],
 
   'routes' => [
-    '@sermon' => [
-      'path' => '/sermon',
-      'controller' => 'Pagekit\\Sermon\\Controller\\SermonController'
+    '@pk-ddl' => [
+      'path' => '/pk-ddl',
+      'controller' => 'Pagekit\\pk-ddl\\Controller\\DDLController'
     ]
   ],
 
@@ -33,10 +33,10 @@ return [
   ],
 
   'menu' => [
-    'sermon' => [
-      'label'  => 'Predigten',
+    'pk-ddl' => [
+      'label'  => 'DDls',
       'icon'   => 'app/system/assets/images/placeholder-icon.svg',
-      'url'    => '@sermon',
+      'url'    => '@pk-ddl',
       'active' => '@todo/*',
       'access' => 'todo: manage'
     ]

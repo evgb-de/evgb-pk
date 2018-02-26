@@ -1,6 +1,6 @@
-<?php $view->script('sermon', 'sermon:js/user.js', 'vue') ?>
-<div id="sermon">
-  <h1>{{ 'Sermons' | trans }}:</h1>
+<?php $view->script('pk-ddl', 'pk-ddl:js/user.js', 'vue') ?>
+<div id="pk-ddl">
+  <h1>{{ 'DDLs' | trans }}:</h1>
   <div class="uk-overflow-container uk-width-1-1">
     <table class="uk-table-striped uk-table-hover uk-width-1-1">
       <thead>

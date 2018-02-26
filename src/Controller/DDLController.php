@@ -1,28 +1,28 @@
 <?php
 
-namespace Pagekit\Sermon\Controller;
+namespace Pagekit\pk_ddl\Controller;
 
 use Pagekit\Application as App;
 
-class SermonController
+class DDLController
 {
   /**
   * @Access(admin=true)
   */
   public function indexAction()
   {
-      $module = App::module('sermon');
+      $module = App::module('pk-ddl');
       $config = $module->config;
       return [
           '$view' => [
-              'title' => __('Sermons'),
-              'name' => 'sermon:views/admin/index.php'
+              'title' => __('DDls'),
+              'name' => 'pk-ddl:views/admin/index.php'
           ],
           '$data' => [
               'config' => $config
           ],
           'entries' => $config['entries'],
-          'title' => 'Manage Sermons',
+          'title' => 'Manage DDLs',
       ];
   }
   /**
@@ -31,7 +31,7 @@ class SermonController
   */
   public function saveAction($entries = [])
   {
-    App::config('sermon')->set('entries', $entries);
+    App::config('pk-ddl')->set('entries', $entries);
     return ['message' => 'success'];
   }
 
@@ -40,12 +40,12 @@ class SermonController
   */
   public function siteAction()
   {
-    $module = App::module('sermon');
+    $module = App::module('pk-ddl');
     $config = $module->config;
     return [
       '$view' => [
-        'title' => __("Sermons"),
-        'name' => 'sermon:views/index.php'
+        'title' => __("DDLs"),
+        'name' => 'pk-ddl:views/index.php'
       ],
       'entries' => $config['entries']
     ];
