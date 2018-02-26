@@ -1,3 +1,5 @@
-# pagekit-ext
+# pk-ddl
 
-This is a Place for custom Themes and Extensions we use on our Website.
+## Extention for Pagekit to provide a site for Direkt Downloads.
+
+It features customizable Descriptionfields and more than one Link per Entry.
