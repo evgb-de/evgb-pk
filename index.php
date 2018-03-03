@@ -2,27 +2,27 @@
 
 use Pagekit\Application;
 
-// packages/evgb-de/pk-ddl/index.php
+// packages/evgb-de/pkddl/index.php
 
 return [
-  'name' => 'pk-ddl',
+  'name' => 'pkddl',
   'type' => 'extension',
   // called when Pagekit initializes the module
   'main' => function (Application $app) {
 
   },
   'autoload' => [
-    'Pagekit\\pk-ddl\\' => 'src'
+    'Pagekit\\pkddl\\' => 'src'
   ],
-  // Enable the pk-ddl: appreviation
+  // Enable the pkddl: appreviation
   'resources' => [
-    'pk-ddl:' => ''
+    'pkddl:' => ''
   ],
 
   'routes' => [
-    '@pk-ddl' => [
-      'path' => '/pk-ddl',
-      'controller' => 'Pagekit\\pk-ddl\\Controller\\DDLController'
+    '@pkddl' => [
+      'path' => '/pkddl',
+      'controller' => 'Pagekit\\pkddl\\Controller\\DDLController'
     ]
   ],
 
@@ -33,12 +33,12 @@ return [
   ],
 
   'menu' => [
-    'pk-ddl' => [
+    'pkddl' => [
       'label'  => 'DDls',
       'icon'   => 'app/system/assets/images/placeholder-icon.svg',
-      'url'    => '@pk-ddl',
-      'active' => '@todo/*',
-      'access' => 'todo: manage'
+      'url'    => '@pkddl',
+      'active' => '@pkddl/*',
+      'access' => 'pkddl: manage'
     ]
   ],
 ];

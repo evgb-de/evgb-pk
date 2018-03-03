@@ -1,6 +1,6 @@
 <?php
 
-namespace Pagekit\pk_ddl\Controller;
+namespace Pagekit\pkddl\Controller;
 
 use Pagekit\Application as App;
 
@@ -11,12 +11,12 @@ class DDLController
   */
   public function indexAction()
   {
-      $module = App::module('pk-ddl');
+      $module = App::module('pkddl');
       $config = $module->config;
       return [
           '$view' => [
               'title' => __('DDls'),
-              'name' => 'pk-ddl:views/admin/index.php'
+              'name' => 'pkddl:views/admin/index.php'
           ],
           '$data' => [
               'config' => $config
@@ -31,7 +31,7 @@ class DDLController
   */
   public function saveAction($entries = [])
   {
-    App::config('pk-ddl')->set('entries', $entries);
+    App::config('pkddl')->set('entries', $entries);
     return ['message' => 'success'];
   }
 
@@ -40,12 +40,12 @@ class DDLController
   */
   public function siteAction()
   {
-    $module = App::module('pk-ddl');
+    $module = App::module('pkddl');
     $config = $module->config;
     return [
       '$view' => [
         'title' => __("DDLs"),
-        'name' => 'pk-ddl:views/index.php'
+        'name' => 'pkddl:views/index.php'
       ],
       'entries' => $config['entries']
     ];

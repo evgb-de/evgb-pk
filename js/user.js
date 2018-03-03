@@ -1,6 +1,6 @@
 $(function () {
     var vm = new Vue({
-        el: '#pk-ddl',
+        el: '#pkddl',
 
         data: {
         },

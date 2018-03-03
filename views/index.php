@@ -1,11 +1,11 @@
-<?php $view->script('pk-ddl', 'pk-ddl:js/user.js', 'vue') ?>
-<div id="pk-ddl">
+<?php $view->script('pkddl', 'pkddl:js/user.js', 'vue') ?>
+<div id="pkddl">
   <h1>{{ 'DDLs' | trans }}:</h1>
   <div class="uk-overflow-container uk-width-1-1">
     <table class="uk-table-striped uk-table-hover uk-width-1-1">
       <thead>
         <tr>
-          <th class="uk-width-1-6 uk-text-left">{{ 'Preacher' | trans }}</th>
+          <th v-for class="uk-width-1-6 uk-text-left">{{ 'Title' | trans }}</th>
           <th class="uk-width-1-6 uk-text-left">{{ 'Bible passage' | trans }}</th>
           <th class="uk-width-1-6 uk-text-left">{{ 'Description' | trans }}</th>
           <th class="uk-width-1-6 uk-text-left">{{ 'Date' | trans }}</th>

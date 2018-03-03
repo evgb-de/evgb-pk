@@ -1,6 +1,6 @@
 {
-    "name": "pk-ddl",
+    "name": "pkddl",
     "version": "0.2",
     "type": "pagekit-extension",
-    "title": "Provide a List of DDLs with custom Fields"
+    "title": "Direct Download List"
 }

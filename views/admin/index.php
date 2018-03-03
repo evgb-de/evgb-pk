@@ -1,13 +1,14 @@
-<?php $view->script('pk-ddl', 'pk-ddl:js/admin.js', 'vue') ?>
+<?php $view->script('pkddl', 'pkddl:js/admin.js', 'vue') ?>
 <script type="text/javascript" src="/app/assets/uikit/js/components/datepicker.min.js"></script>
-<div id="pk-ddl-table" class="uk-form">
+<script type="text/javascript" src="/app/assets/uikit/js/components/biblepicker.js"></script>
+<div id="pkddl-table" class="uk-form">
   <button class="uk-button uk-button-primary uk-align-right" @click="save">{{ 'Save' | trans }}</button>
 
   <h2>{{ '{0} DDLs|one: One DDL|more: %count% DDLs' | transChoice entries.length {count:entries.length} }}</h2>
 
   <form class="uk-width-large-1-1 uk-form" @submit="add">
     <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isPreacherDanger }" placeholder="{{ 'Preacher' | trans }}" v-model="newPreacher">
-    <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isBiblepassageDanger }" placeholder="{{ 'Bible passage' | trans }}" v-model="newBiblepassage">
+    <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isBiblepassageDanger }" placeholder="{{ 'Bible passage' | trans }}" type="text" data-uk-biblepicker="{format:'DD.MM.YYYY'}" v-model="newBiblepassage">
     <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isDescriptionDanger }" placeholder="{{ 'Description' | trans }}" v-model="newDescription">
     <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isDateDanger }" placeholder="{{ 'Date' | trans }}" type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}" v-model="newDate">
     <button class="uk-button" @click="add">{{ 'Add' | trans }}</button>
@@ -15,7 +16,7 @@
   
   <hr>
 
-  <div class="uk-alert" v-if="!entries.length">{{ 'You can add your first task using the input fields above. Go ahead!' | trans }}</div>
+  <div class="uk-alert" v-if="!entries.length">{{ 'You can add your first Entry using the input fields above. Go ahead!' | trans }}</div>
   <div class="uk-overflow-container uk-width-1-1">
     <table class="uk-table-striped uk-table-hover uk-width-1-1" v-if="entries.length">
       <thead>
