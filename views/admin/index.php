@@ -11,10 +11,17 @@
     <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isBiblepassageDanger }" placeholder="{{ 'Bible passage' | trans }}" type="text" data-uk-biblepicker="{format:'DD.MM.YYYY'}" v-model="newBiblepassage">
     <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isDescriptionDanger }" placeholder="{{ 'Description' | trans }}" v-model="newDescription">
     <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isDateDanger }" placeholder="{{ 'Date' | trans }}" type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}" v-model="newDate">
+    <input class="uk-input-large uk-width-1-6"  v-bind:class="{ 'uk-form-danger': isFileDanger }" placeholder="{{ 'File' | trans }}" type="text" v-model="newFile">
     <button class="uk-button" @click="add">{{ 'Add' | trans }}</button>
+
   </form>
-  
-  <hr>
+  <panel-finder :root="storage" v-model="finder" :modal="true"></panel-finder>
+
+<div class="uk-modal-footer uk-text-right">
+    <button class="uk-button uk-button-link uk-modal-close" type="button">{{ 'Cancel' | trans }}</button>
+    <button class="uk-button uk-button-primary" type="button" :disabled="!hasSelection()" @click.prevent="select">{{ 'Select' | trans }}</button>
+</div>
+
 
   <div class="uk-alert" v-if="!entries.length">{{ 'You can add your first Entry using the input fields above. Go ahead!' | trans }}</div>
   <div class="uk-overflow-container uk-width-1-1">

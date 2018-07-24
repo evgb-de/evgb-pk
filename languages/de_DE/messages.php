@@ -1,4 +1,3 @@
-<!-- TODO: Change from Sermon Setting to DDL!-->
 <?php return array (
   'Add' => 'Hinzufügen',
   'Remove' => 'Löschen',
